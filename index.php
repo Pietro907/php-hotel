@@ -57,6 +57,10 @@ $hotels = [
 
 ];
 
+$parking = $_GET['parking'];
+var_dump($parking);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -75,12 +79,15 @@ $hotels = [
     <div class="container mt-5">
         <div class="row">
 
-    <form action="index.php" method="GET" class="my-3">
+            <form action="script.php" method="GET" class="my-3">
 
-        <input type="text" name="parking" id="parking" class="my-3"><br>
+                <label for="parking">Have a parking</label><br>
 
-        <button type="submit">Submit</button>
-    </form>
+                <input type="checkbox" id="parking" name="parking" value="parking">
+
+                <button type="submit" value="submit">Submit</button>
+
+            </form>
 
             <table class="table border">
                 <thead>
