@@ -61,10 +61,13 @@ $parking = $_GET['parking'];
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        background-image: url('https://www.mtu-solutions.com/content/dam/mtu/sustainability/hvo/Tropfen_klein.jpg/_jcr_content/renditions/original.image_file.3850.2887.203,0,4053,2887.file/Tropfen_klein.jpg');
+        background-size: cover;
+        background-position: right;
     }
     .container {
-        height: 150px;
         width: 50%;
+        height: 100vh;
         margin: 0 auto;
     }
     h3{
@@ -76,14 +79,14 @@ $parking = $_GET['parking'];
 
     <div class="container">
         <div class="row">
-            <div class="col">
-                <div class="card w-50">
+            <div class="col pt-5">
+                <div class="card border rounded-bottom w-100 mt-5">
                     <div class="table m-0">
                         <thead>
 
                             <tr>
                                 <th>
-                                    <h3 class="border m-0 py-3 ps-3">Risultati: </h3>
+                                    <h3 class="bg-success text-white border-bottom rounded-top m-0 py-3 ps-3">Risultati: </h3>
                                 </th>
                             </tr>
 
@@ -102,7 +105,7 @@ $parking = $_GET['parking'];
                                         }
                                     } else {
 
-                                        echo "<h3>Tutto esaurito</h3>";
+                                        echo "<h3 class='m-0 py-3 border d-flex justify-content-start align-items-center'> - Tutto esaurito</h3>";
                                     };
 
                                     ?>

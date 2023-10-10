@@ -73,83 +73,24 @@ $parking = $_GET['parking'];
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-image: url('https://www.mtu-solutions.com/content/dam/mtu/sustainability/hvo/Tropfen_klein.jpg/_jcr_content/renditions/original.image_file.3850.2887.203,0,4053,2887.file/Tropfen_klein.jpg');
+        background-size: cover;
+        background-position: right;
+        color: white;
+    }
+
+    ul {
+        width: 80%;
+        margin: 0 auto;
+    }
+</style>
+
 <body>
-
-
-    <div class="container mt-5">
-        <div class="row">
-
-            <form action="script.php" method="GET" class="my-3">
-
-                <label for="parking">Have a parking</label><br>
-
-                <input type="checkbox" id="parking" name="parking" value="parking">
-
-                <button type="submit" value="submit">Submit</button>
-
-            </form>
-
-            <table class="table border">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Parking</th>
-                        <th>Vote</th>
-                        <th>Distance Of Center</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <?php foreach ($hotels as $hotel) : ?>
-
-                        <tr>
-
-                            <!-- name -->
-                            <td>
-                                <?php echo $hotel['name']; ?>
-                            </td>
-
-                            <!-- description -->
-                            <td>
-                                <?php echo $hotel['description']; ?>
-                            </td>
-
-                            <!-- parking -->
-                            <td>
-                                <?php echo $hotel['parking']; ?>
-
-                                <?php
-                                if ($hotel['parking'] == 'true') {
-                                    echo 'true';
-                                } else {
-                                    echo 'false';
-                                }
-                                ?>
-
-                            </td>
-
-                            <!-- vote -->
-                            <td>
-                                <?php echo $hotel['vote']; ?>
-                            </td>
-
-                            <!-- distance_of_center -->
-                            <td>
-                                <?php echo $hotel['distance_of_center']; ?>
-                            </td>
-
-                        </tr>
-
-                    <?php endforeach ?>
-
-
-
-                </tbody>
-            </table>
-        </div>
-    </div>
-
 
 
     <ul class="mt-5">
@@ -176,10 +117,81 @@ $parking = $_GET['parking'];
     </ul>
 
 
+    <div class="container mt-5 ">
+        <div class="row">
+
+            <table class="table border border-success">
+                <thead>
+                    <tr>
+                        <th class="bg-success text-white">Name</th>
+                        <th class="bg-success text-white">Description</th>
+                        <th class="bg-success text-white">Parking</th>
+                        <th class="bg-success text-white">Vote</th>
+                        <th class="bg-success text-white">Distance To Center</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <!-- Filtro in $hotels e ottengo la varibile $hotel
+                 che rappresenta ogni array con all'interno una serie di proprietà 
+                 (name, description, ecc...) -->
+                    <?php foreach ($hotels as $hotel) : ?>
+
+                        <tr>
+
+                            <!-- name -->
+                            <th>
+                                <?php echo $hotel['name']; ?>
+                            </th>
+
+                            <!-- description -->
+                            <td>
+                                <?php echo $hotel['description']; ?>
+                            </td>
+
+                            <!-- parking -->
+                            <td>
+                                <!--  <?php echo $hotel['parking']; ?> -->
+
+                                <?php
+                                if ($hotel['parking'] == true) {
+                                    echo 'true';
+                                } else {
+                                    echo 'false';
+                                }
+                                ?>
+
+                            </td>
+
+                            <!-- vote -->
+                            <td>
+                                <?php echo $hotel['vote']; ?>
+                            </td>
+
+                            <!-- distance_of_center -->
+                            <td>
+                                <?php echo $hotel['distance_to_center'] . '  ' . 'km'; ?>
+                            </td>
+
+                        </tr>
+
+                    <?php endforeach ?>
 
 
 
+                </tbody>
+            </table>
 
+            <form action="script.php" method="GET" class="my-3">
+
+                <label class="d-flex" for="parking">Have a parking <input class="ms-2 mt-1" type="checkbox" id="parking" name="parking" value="parking"></label><br>
+
+                <button class="bg-primary text-white rounded-2 border-primary mb-5 py-1 px-3" type="submit" value="submit">Submit</button>
+
+            </form>
+
+        </div>
+    </div>
 
 </body>
 
