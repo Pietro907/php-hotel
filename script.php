@@ -97,7 +97,7 @@ $parking = $_GET['parking'];
                                 <td class="border">
                                     <?php
                                     if ($parking != null) {
-                                        echo `<h3>Risultati parcheggio: </h3>`;
+                                        echo `<h4>Risultati parcheggio: </h4>`;
                                         foreach ($hotels as $hotel) {
 
                                             if ($hotel['parking'] == true) {
