@@ -10,7 +10,8 @@ Bonus:
 
 Aggiungere un secondo campo al form che permetta di filtrare gli hotel per voto (es. inserisco 3 ed ottengo tutti gli hotel che hanno un voto di tre stelle o superiore)
 
-NOTA: deve essere possibile utilizzare entrambi i filtri contemporaneamente (es. ottenere una lista con hotel che dispongono di parcheggio e che hanno un voto di tre stelle o superiore) Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gli hotel. -->
+NOTA: 
+deve essere possibile utilizzare entrambi i filtri contemporaneamente (es. ottenere una lista con hotel che dispongono di parcheggio e che hanno un voto di tre stelle o superiore) Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gli hotel. -->
 
 
 
@@ -69,16 +70,26 @@ $hotels = [
 </head>
 
 <body>
-    <div class="container">
+
+
+    <div class="container mt-5">
         <div class="row">
-            <table class="table">
+
+    <form action="index.php" method="GET" class="my-3">
+
+        <input type="text" name="parking" id="parking" class="my-3"><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+            <table class="table border">
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Name</th>
-                        <th>Name</th>
-                        <th>Name</th>
-                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Parking</th>
+                        <th>Vote</th>
+                        <th>Distance Of Center</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -94,7 +105,7 @@ $hotels = [
 
                             <!-- description -->
                             <td>
-                                <?php echo $hotel['dscription']; ?>
+                                <?php echo $hotel['description']; ?>
                             </td>
 
                             <!-- parking -->
@@ -134,7 +145,7 @@ $hotels = [
 
 
 
-    <ul>
+    <ul class="mt-5">
         <?php foreach ($hotels as $hotel) : ?>
 
             <li>
