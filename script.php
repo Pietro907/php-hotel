@@ -70,7 +70,7 @@ $parking = $_GET['parking'];
         height: 100vh;
         margin: 0 auto;
     }
-    h3{
+    h4{
         padding-left: 5rem;
     }
 </style>
@@ -100,12 +100,12 @@ $parking = $_GET['parking'];
                                         foreach ($hotels as $hotel) {
 
                                             if ($hotel['parking'] == true) {
-                                                echo "<h3 class='m-0 py-3 border d-flex justify-content-start align-items-center'> - {$hotel['name']}</h3>";
+                                                echo "<h4 class='m-0 py-3 border d-flex justify-content-start align-items-center'> - {$hotel['name']}</h4>";
                                             }
                                         }
                                     } else {
 
-                                        echo "<h3 class='m-0 py-3 border d-flex justify-content-start align-items-center'> - Tutto esaurito</h3>";
+                                        echo "<h4 class='m-0 py-3 border d-flex justify-content-start align-items-center'> - Tutto esaurito</h4>";
                                     };
 
                                     ?>
