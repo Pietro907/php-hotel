@@ -74,16 +74,18 @@ $hotels = [
             <table class="table">
                 <thead>
                     <tr>
-
+                        <th>Name</th>
+                        <th>Name</th>
+                        <th>Name</th>
+                        <th>Name</th>
+                        <th>Name</th>
                     </tr>
                 </thead>
                 <tbody>
 
+                    <?php foreach ($hotels as $hotel) : ?>
 
-
-                    <tr>
-
-                        <?php foreach ($hotels as $hotel) : ?>
+                        <tr>
 
                             <!-- name -->
                             <td>
@@ -98,6 +100,7 @@ $hotels = [
                             <!-- parking -->
                             <td>
                                 <?php echo $hotel['parking']; ?>
+
                                 <?php
                                 if ($hotel['parking'] == 'true') {
                                     echo 'true';
@@ -105,6 +108,7 @@ $hotels = [
                                     echo 'false';
                                 }
                                 ?>
+
                             </td>
 
                             <!-- vote -->
@@ -112,18 +116,14 @@ $hotels = [
                                 <?php echo $hotel['vote']; ?>
                             </td>
 
-
                             <!-- distance_of_center -->
                             <td>
                                 <?php echo $hotel['distance_of_center']; ?>
                             </td>
 
+                        </tr>
 
-                        <?php endforeach ?>
-
-                    </tr>
-
-
+                    <?php endforeach ?>
 
 
 
