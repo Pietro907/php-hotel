@@ -80,7 +80,8 @@ $parking = $_GET['parking'];
     <div class="container">
         <div class="row">
             <div class="col pt-5">
-                <div class="card border rounded-bottom w-100 mt-5">
+                <div class="card border border-success rounded-bottom w-100 mt-5">
+
                     <div class="table m-0">
                         <thead>
 
