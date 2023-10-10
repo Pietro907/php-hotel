@@ -58,7 +58,7 @@ $hotels = [
 ];
 
 $parking = $_GET['parking'];
-var_dump($parking);
+// var_dump($parking);
 
 
 ?>
